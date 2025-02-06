@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎁Happy Birthday🎁</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #ff69b4; /* Soft pink */
+            font-family: Josefin Sans, serif;
+        }
+        .birthday-message {
+            font-size: 1.5em;
+            font-family: Josefin Sans, serif;
+            margin: 20px 0;
+            color: #ff6347; /* Tomato color */
+        }
+        .countdown {
+            font-size: 2em;
+            margin-top: 20px;
+            color: #4CAF50;
+        }
+        .gallery img {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            border-radius: 50%;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            border: none;
+            color: white;
+            font-size: 1.2em;
+            font-family: Josefin Sans, serif;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        .button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>😙❤️Happy Birthday, My Dear Gori😙❤️</h1>
+    <p class="birthday-message">Wishing you a day filled with love, laughter, and all your favorite things!</p>
+
+    <div class="countdown" id="countdown"></div>
+
+    <div class="gallery">
+        <h2>Scroll Down👇👇👇👇</h2>
+        <img src="image1.jpg" alt="Memory 1">
+        <img src="image2.jpg" alt="Memory 2">
+        <img src="image3.jpg" alt="Memory 3">
+    </div>
+
+    <a href="surprise-link.html" class="button">Open Your Birthday Surprise🎁🎁🎁🎁</a>
+    
+
+    <script>
+        // Countdown timer
+        function countdownToBirthday() {
+            const birthdayDate = new Date('Feb 7, 2025 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = birthdayDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "🎉 It's your birthday! 🎉 You are now 21 years old😉";
+            }
+        }
+
+        setInterval(countdownToBirthday, 1000);
+    </script>
+</body>
+</html>
